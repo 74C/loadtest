@@ -2,17 +2,15 @@
   "name": "webapp",
   "private": true,
   "dependencies": {
-    "angular": "1.5.8",
-    "angular-messages": "1.5.8",
-    "angular-animate": "1.5.8",
-    "angular-ui-router": "^0.3.1",
-    "animate.css": "~3.3.0",
-    "font-awesome": "~4.3.0",
-    "ng-file-upload": "~4.2.0",
-    "angular-material": "1.1.1",
-    "highcharts": "^5.0.7"
-  },
-  "resolutions": {
-    "angular": "1.5.8"
+    "gulp":"3.9.1",
+    "angular": "1.6.2",
+    "angular-messages": "1.6.2",
+    "angular-animate": "1.6.2",
+    "angular-ui-router": "0.4.2",
+    "animate.css": "3.5.2",
+    "font-awesome": "4.7.0",
+    "ng-file-upload": "12.2.13",
+    "angular-material": "1.1.3",
+    "highcharts": "5.0.7"
   }
 }

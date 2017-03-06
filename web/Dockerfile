@@ -40,7 +40,8 @@ RUN npm install && \
 
 COPY . /usr/src/app
 RUN gulp build && \
-    mv dist /usr/share/nginx/www && \
+    #mv dist /usr/share/nginx/www && \
+	mv src /usr/share/nginx/www && \
     chmod -R 777 /usr/share/nginx/www && \
     mv nginx.conf /etc/nginx/nginx.conf && \
     npm cache clean && bower --allow-root cache clean && \
