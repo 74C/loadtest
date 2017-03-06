@@ -1,0 +1,17 @@
+version: '2'
+services:
+  api:
+    build: ./api
+    restart: "no"
+    environment:
+      - MASTER_NODE=True
+
+  web:
+    build: ./web
+    restart: "no"
+    links:
+      - api
+    ports:
+      - "8080:80"
+    volumes:
+      - ./web/dist:/usr/share/nginx/www:ro
