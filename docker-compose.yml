@@ -2,12 +2,14 @@ version: '2'
 services:
   api:
     build: ./api
+    container_name: api
     restart: "no"
     environment:
       - MASTER_NODE=True
 
   web:
     build: ./web
+    container_name: web
     restart: "no"
     links:
       - api

@@ -1,6 +1,6 @@
 FROM golang:1.8-alpine
-WORKDIR /go/src/github.com/superload/api
+WORKDIR /go/src/github.com/loadtest/loadapi
 EXPOSE 80
-#CMD api
+CMD loadapi
 COPY . ./
 RUN go install
