@@ -17,3 +17,10 @@ services:
       - "8080:80"
     volumes:
       - ./web/dist:/usr/share/nginx/www:ro
+
+  mongodb:
+    image: "mongo:3"
+    container_name: mongodb
+    ports:
+       - "27017"
+    tty: true
