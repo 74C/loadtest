@@ -1,0 +1,32 @@
+<style>
+    .mdl-card {
+        width: 256px;
+        height: 128px;
+    }
+
+    .mdl-card__actions {
+        height: 32px;
+    }
+
+</style>
+
+<div class="mdl-grid">
+    <div ng-repeat="test in tests">
+        <div class="mdl-cell mdl-cell--4-col">
+            <div class="mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__actions mdl-card--border">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                        ng-click="loadTest(test.id)">
+                        {{test.id}}
+                    </a>
+                </div>
+
+                <div class="mdl-card__supporting-text">
+                    <b>Date Added:</b> {{test.date}}<br /><br />
+                    <b>Type:</b> {{test.type}}<br /><br />
+					{{test.notes}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

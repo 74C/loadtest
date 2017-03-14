@@ -1,1 +1,52 @@
-<h1>None to be seen ... for now</h1>
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+	<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css" />
+	<script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+
+	<link rel="stylesheet" href="./libs/styles.css" />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+
+	<!-- inject:highcharts -->
+	<!-- endinject -->
+
+	<script src="script.js"></script>
+
+
+</head>
+
+<body>
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<header class="mdl-layout__header">
+			<div class="mdl-layout__header-row">
+				<span class="mdl-layout-title">Load Tester</span>
+				<div class="mdl-layout-spacer"></div>
+
+				<nav class="mdl-navigation mdl-layout--large-screen-only">
+					<a class="mdl-navigation__link" href="#/">home</a>
+					<a class="mdl-navigation__link" href="#configurations">Configurations</a>
+				</nav>
+			</div>
+		</header>
+		<div class="mdl-layout__drawer">
+			<span class="mdl-layout-title">Load</span>
+
+			<nav class="mdl-navigation">
+				<a class="mdl-navigation__link" href="#loadtests">loadests</a>
+			</nav>
+		</div>
+		<main class="mdl-layout__content">
+			<div class="mdl-grid">
+				<div id="main">
+					<div ng-view></div>
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+</html>
