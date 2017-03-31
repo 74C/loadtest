@@ -10,11 +10,9 @@ CMD ["nginx", "-g", "daemon off;"]
 VOLUME ["/var/cache/nginx"]
 EXPOSE 80
 
-# Install Gulp and Bower first to prevent unnecessary layer cache invalidation;
-# NGINX will need frequent security updates, these won't.
 RUN npm install --global gulp-cli@1.2.2 bower@1.7.9
 
-ENV NGINX_VERSION 1.11.10-1~jessie
+ENV NGINX_VERSION 1.11.12-1~jessie
 RUN apt-get update && \
     apt-get install --no-install-recommends --no-install-suggests -y \
       ca-certificates \
@@ -29,8 +27,7 @@ RUN apt-get update && \
     ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -sf /dev/stderr /var/log/nginx/error.log
 
-# Now that NGINX is installed, install our global dependencies followed by
-# building our actual app; ideal ordering for Docker layer caching.
+# Building the app
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
@@ -40,8 +37,7 @@ RUN npm install && \
 
 COPY . /usr/src/app
 RUN gulp build && \
-    #mv dist /usr/share/nginx/www && \
-	mv src /usr/share/nginx/www && \
+    mv dist /usr/share/nginx/www && \
     chmod -R 777 /usr/share/nginx/www && \
     mv nginx.conf /etc/nginx/nginx.conf && \
     npm cache clean && bower --allow-root cache clean && \
